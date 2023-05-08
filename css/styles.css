@@ -117,7 +117,7 @@ address {
     padding-left: 16px;
     padding-right: 16px;
     margin: 0 auto;
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
 }
 @media screen and (min-width: 428px) {
     .container {
@@ -367,6 +367,17 @@ address {
 .tel-item > .link {
     color: var(--primary-brand-color);
 }
+@media screen and (max-width: 299px) {
+    .tel-item {
+        font-size: 20px;
+    }
+}
+@media screen and (min-width: 300px) and (max-width: 433px) {
+    .tel-item {
+        /* font-size: calc((100vw - 320px) / (430 - 320) * (36 - 20) + 20px); */
+        font-size: calc(100vw * 36 / 505);
+    }
+}
 .mobile-address {
     margin-top: auto;
     margin-bottom: 48px;
@@ -379,8 +390,10 @@ address {
     text-transform: none;
 }
 .menu-container .social-list {
-    gap: 56px;
-    justify-content: flex-start;
+    /* gap: 56px;
+    justify-content: flex-start; */
+    justify-content: space-between;
+    max-width: 380px;
 }
 
 /* Hero */
@@ -486,7 +499,8 @@ address {
 
 /* Button */
 .btn {
-    padding: 11px 23px;
+    /* padding: 11px 23px; */
+    padding: 8px 16px;
     border: 1px solid var(--accent-color);
     border-radius: 4px;
 
@@ -539,8 +553,11 @@ address {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
         0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-.btn-list:not(:last-child) {
+/* .btn-list:not(:last-child) {
     margin-right: 24px;
+} */
+.btn-list {
+    gap: 24px;
 }
 
 /* Feature */
@@ -788,6 +805,30 @@ address {
 .customers-icon {
     fill: currentColor;
 }
+
+/* ========== Portfolio ========== */
+.portfolio {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+.portfolio-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 16px 24px;
+    margin-bottom: 48px;
+}
+.portfolio-list {
+    margin: 0 auto;
+}
+.portfolio-list > .portfolio-item {
+    flex-basis: calc((100% - 48px) / 3);
+    /* overflow: hidden; */
+}
+.portfolio-list > .portfolio-item:nth-last-child(-n + 3) {
+    margin-bottom: 0;
+}
+/* ========== Portfolio ========== */
 
 /* Footer */
 .footer {
